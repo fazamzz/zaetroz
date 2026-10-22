@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zaetroz Thinks: - Merenung Liar</title>
+    <meta name="description" content="Zaetroz Thinks: catatan tentang hidup, moral, cinta, agama, dan hal-hal yang jarang kita tanyakan.">
+    <meta name="theme-color" content="#000000">
+
+    <!-- Tampilan saat dibagikan (WhatsApp, Instagram, dll.) -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Zaetroz Thinks: - Merenung Liar">
+    <meta property="og:description" content="Catatan tentang hidup, moral, dan hal-hal yang jarang kita tanyakan.">
+    <meta property="og:image" content="images/logo.jpg">
+    <meta property="og:locale" content="id_ID">
+
+    <link href="images/logo.jpg">
+
+    <!-- Tandai bahwa JavaScript aktif (dipakai untuk animasi dan fitur interaktif) -->
+    <script>document.documentElement.classList.add('js');</script>
+
+    <link href="https://fonts.googleapis.com">
+    <link href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Playfair+Display:ital,wght@0,600;0,800;1,500;1,700&display=swap">
+    <link href="style.css">
+</head>
+<body>
+
+    <a href="#tulisan" class="skip-link">Lewati ke konten</a>
+    <div class="progress" id="progress" aria-hidden="true"></div>
+
+    <!-- ============ NAVBAR ============ -->
+    <nav id="navbar">
+        <div class="nav-inner">
+            <a href="#top" class="brand">
+                <span class="brand-mark"><img src="images/logo.jpg" alt="Logo Zaetroz"></span>
+                <span>Zaetroz Thinks</span>
+            </a>
+            <button class="nav-toggle" id="navToggle" aria-label="Buka menu" aria-expanded="false">Menu</button>
+            <div class="nav-links" id="navLinks">
+                <a href="#home">Home</a>
+                <a href="#tulisan">Tulisan</a>
+                <a href="#series">Series</a>
+                <a href="#fragments">Fragments</a>
+                <a href="#about">Tentang Saya</a>
+                <a href="#contact" class="nav-cta">Kontak</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ============ COVER ============ -->
+    <header class="cover" id="top">
+
+        <!-- Slideshow lukisan sebagai latar cover (diatur script.js) -->
+        <div class="cover-slides" id="coverSlides" aria-hidden="true">
+            <img class="slide active" src="images/moral.jpg" alt="">
+            <img class="slide" src="images/menunda-hidup.jpg" alt="">
+            <img class="slide" src="images/cinta.jpg" alt="">
+            <img class="slide" src="images/tuhan.jpg" alt="">
+            <img class="slide" src="images/idealis.jpg" alt="">
+            <img class="slide" src="images/sukses.jpg" alt="">
+        </div>
+        <div class="spotlight" aria-hidden="true"></div>
+
+        <div class="cover-inner">
+            <h1 class="title rise" style="--d:.1s">Zaetroz Thinks:<span class="cursor" aria-hidden="true"></span></h1>
+
+            <p class="tagline rise" style="--d:.3s">
+                <span class="word-solid">&lsquo;Merenung</span>
+                <span class="word-outline">Liar&rsquo;</span>
+                <svg class="scribble" viewBox="0 0 300 20" preserveAspectRatio="none" aria-hidden="true">
+                    <path pathLength="1" d="M3 13 C 40 2, 70 19, 112 9 S 190 3, 232 12 S 282 15, 297 5"/>
+                </svg>
+            </p>
+
+            <!-- Kutipan dari Fragments berganti otomatis -->
+            <p class="cover-quote rise" id="coverQuote" style="--d:.6s"></p>
+
+            <p class="intro rise" style="--d:.8s">Catatan tentang hidup, moral, dan hal-hal yang jarang kita tanyakan.</p>
+
+            <div class="cover-actions rise" style="--d:1s">
+                <a href="#tulisan" class="button button-light">Baca Tulisan</a>
+                <button type="button" class="button button-ghost js-random-fragment">Fragment acak</button>
+            </div>
+        </div>
+
+        <div class="cover-dots" id="coverDots" role="group" aria-label="Pilih gambar cover"></div>
+        <a href="#home" class="scroll-cue" aria-label="Gulir ke bawah"></a>
+    </header>
+
+    <!-- Pita kata berjalan -->
+    <div class="marquee" aria-hidden="true">
+        <div class="marquee-track">
+            <div class="marquee-group">
+                <span>Merenung Liar</span><i class="dot"></i><span>Bertanya</span><i class="dot"></i><span>Meragukan</span><i class="dot"></i><span>Menguji Keyakinan</span><i class="dot"></i><span>Hidup</span><i class="dot"></i><span>Moral</span><i class="dot"></i><span>Cinta</span><i class="dot"></i><span>Makna</span><i class="dot"></i>
+            </div>
+            <div class="marquee-group">
+                <span>Merenung Liar</span><i class="dot"></i><span>Bertanya</span><i class="dot"></i><span>Meragukan</span><i class="dot"></i><span>Menguji Keyakinan</span><i class="dot"></i><span>Hidup</span><i class="dot"></i><span>Moral</span><i class="dot"></i><span>Cinta</span><i class="dot"></i><span>Makna</span><i class="dot"></i>
+            </div>
+        </div>
+    </div>
+
+    <main>
+
+        <!-- ============ HOME / HERO ============ -->
+        <section id="home" class="hero">
+            <div class="wrap" data-reveal>
+                <h2>Berhenti sebentar. Pikirkan lagi.</h2>
+                <p>
+                    Tempat menulis pikiran yang belum rapi: tentang cinta, kesuksesan,
+                    kebebasan, dan semua yang biasanya kita terima tanpa bertanya.
+                </p>
+
+                <!-- Angka dihitung otomatis dari isi halaman oleh script.js -->
+                <div class="stats">
+                    <div class="stat"><span class="stat-num" data-count="posts">6</span><span class="stat-label">Tulisan</span></div>
+                    <div class="stat"><span class="stat-num" data-count="eps">6</span><span class="stat-label">Episode series</span></div>
+                    <div class="stat"><span class="stat-num" data-count="frags">9</span><span class="stat-label">Fragments</span></div>
+                </div>
+
+                <a href="#tulisan" class="button">Baca Tulisan</a>
+            </div>
+        </section>
+
+        <!-- ============ TULISAN ============ -->
+        <section id="tulisan">
+            <div class="wrap">
+                <div class="section-head" data-reveal><h2>Tulisan Terbaru</h2></div>
+
+                <!-- Pencarian, filter, dan urutan (dikendalikan script.js) -->
+                <div class="toolbar" data-reveal>
+                    <label class="search" for="cari">
+                        <span class="sr-only">Cari tulisan</span>
+                        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+                        <input type="search" id="cari" placeholder="Cari tulisan..." autocomplete="off">
+                        <kbd aria-hidden="true">/</kbd>
+                    </label>
+                    <button type="button" class="chip sort" id="sortBtn">Terbaru &darr;</button>
+                </div>
+
+                <div class="filter" role="group" aria-label="Filter kategori" data-reveal>
+                    <button type="button" class="chip active" data-filter="semua" aria-pressed="true">Semua</button>
+                    <button type="button" class="chip" data-filter="hidup" aria-pressed="false">Hidup</button>
+                    <button type="button" class="chip" data-filter="filsafat" aria-pressed="false">Filsafat</button>
+                    <button type="button" class="chip" data-filter="cinta" aria-pressed="false">Cinta</button>
+                    <button type="button" class="chip" data-filter="agama" aria-pressed="false">Agama</button>
+                    <button type="button" class="chip chip-saved" data-filter="tersimpan" aria-pressed="false">Tersimpan <span id="savedCount">0</span></button>
+                </div>
+
+                <p class="result-count" id="resultCount" aria-live="polite"></p>
+
+                <div class="post-container" id="postContainer">
+
+                    <!-- Tulisan unggulan (kelas "featured" diatur otomatis oleh script.js) -->
+                    <article class="post-card featured" data-id="menunda-hidup" data-kategori="hidup" data-tanggal="2026-10-03" data-order="1" data-reveal>
+                        <button type="button" class="bookmark" aria-pressed="false" aria-label="Simpan tulisan ini"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h12v18l-6-4-6 4z"/></svg></button>
+                        <div class="post-media"><img src="images/menunda-hidup.jpg" alt="Lukisan seorang perempuan menatap bayangannya di cermin" loading="lazy" onerror="this.closest('.post-media').remove()"></div>
+                        <div class="post-body">
+                            <span class="post-tag">Hidup</span>
+                            <h3><a href="articles/kamu-tidak-sedang-menunggu-masa-depan-kamu-sedang-menunda-hidup.html">Kamu Tidak Sedang Menunggu Masa Depan. Kamu Sedang Menunda Hidup.</a></h3>
+                            <p>Kita sering merasa hidup baru dimulai setelah lulus, bekerja, atau berhasil. Tulisan ini mempertanyakan kapan &ldquo;nanti&rdquo; itu benar-benar tiba.</p>
+                            <a class="read-more" href="articles/kamu-tidak-sedang-menunggu-masa-depan-kamu-sedang-menunda-hidup.html">Baca selengkapnya</a>
+                            <p class="post-date">3 Oktober 2026</p>
+                        </div>
+                    </article>
+
+                    <article class="post-card" data-id="idealis" data-kategori="filsafat" data-tanggal="2026-09-16" data-order="2" data-reveal>
+                        <button type="button" class="bookmark" aria-pressed="false" aria-label="Simpan tulisan ini"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h12v18l-6-4-6 4z"/></svg></button>
+                        <div class="post-media"><img src="images/idealis.jpg" alt="Lukisan kepala manusia dengan makhluk pucat di atasnya" loading="lazy" onerror="this.closest('.post-media').remove()"></div>
+                        <div class="post-body">
+                            <span class="post-tag">Filsafat</span>
+                            <h3><a href="articles/mungkin-kamu-tidak-idealis-kamu-cuma-menolak-dunia.html">Mungkin Kamu Tidak Idealis. Kamu Cuma Menolak Dunia.</a></h3>
+                            <p>Idealisme dibaca lewat sudut pandang Nietzsche: cita-cita yang mulia, atau cara halus menolak dunia apa adanya?</p>
+                            <a class="read-more" href="articles/mungkin-kamu-tidak-idealis-kamu-cuma-menolak-dunia.html">Baca selengkapnya</a>
+                            <p class="post-date">16 September 2026</p>
+                        </div>
+                    </article>
+
+                    <article class="post-card" data-id="cinta" data-kategori="cinta" data-tanggal="2026-09-16" data-order="3" data-reveal>
+                        <button type="button" class="bookmark" aria-pressed="false" aria-label="Simpan tulisan ini"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h12v18l-6-4-6 4z"/></svg></button>
+                        <div class="post-media"><img src="images/cinta.jpg" alt="Lukisan tangan terbuka dengan sapuan warna" loading="lazy" onerror="this.closest('.post-media').remove()"></div>
+                        <div class="post-body">
+                            <span class="post-tag">Cinta</span>
+                            <h3><a href="articles/kita-terlalu-memuliakan-cinta.html">Kita Terlalu Memuliakan Cinta</a></h3>
+                            <p>Cinta sering dijadikan alasan untuk bertahan, berkorban, bahkan menderita. Benarkah semua itu cinta?</p>
+                            <a class="read-more" href="articles/kita-terlalu-memuliakan-cinta.html">Baca selengkapnya</a>
+                            <p class="post-date">16 September 2026</p>
+                        </div>
+                    </article>
+
+                    <article class="post-card" data-id="moral" data-kategori="filsafat" data-tanggal="2026-09-09" data-order="4" data-reveal>
+                        <button type="button" class="bookmark" aria-pressed="false" aria-label="Simpan tulisan ini"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h12v18l-6-4-6 4z"/></svg></button>
+                        <div class="post-media"><img src="images/moral.jpg" alt="Lukisan profil pria dengan topeng hitam menutupi separuh wajah" loading="lazy" onerror="this.closest('.post-media').remove()"></div>
+                        <div class="post-body">
+                            <span class="post-tag">Filsafat</span>
+                            <h3><a href="articles/apakah-kita-benar-benar-bermoral.html">Apakah Kita Benar-Benar Bermoral?</a></h3>
+                            <p>Lewat kisah cincin ajaib dari Plato, tulisan ini bertanya apa yang akan kita lakukan jika tidak ada yang mengawasi.</p>
+                            <a class="read-more" href="articles/apakah-kita-benar-benar-bermoral.html">Baca selengkapnya</a>
+                            <p class="post-date">9 September 2026</p>
+                        </div>
+                    </article>
+
+                    <article class="post-card" data-id="sukses" data-kategori="hidup" data-tanggal="2026-09-09" data-order="5" data-reveal>
+                        <button type="button" class="bookmark" aria-pressed="false" aria-label="Simpan tulisan ini"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h12v18l-6-4-6 4z"/></svg></button>
+                        <div class="post-media"><img src="images/sukses.jpg" alt="Ilustrasi Sisyphus mendorong batu besar ke atas bukit" loading="lazy" onerror="this.closest('.post-media').remove()"></div>
+                        <div class="post-body">
+                            <span class="post-tag">Hidup</span>
+                            <h3><a href="articles/sukses-atau-pengakuan.html">Mungkin Kamu Tidak Ingin Sukses. Kamu Cuma Ingin Diakui</a></h3>
+                            <p>Apakah kita benar-benar mengejar sukses, atau hanya ingin terlihat berhasil di mata orang lain?</p>
+                            <a class="read-more" href="articles/sukses-atau-pengakuan.html">Baca selengkapnya</a>
+                            <p class="post-date">9 September 2026</p>
+                        </div>
+                    </article>
+
+                    <article class="post-card" data-id="tuhan" data-kategori="agama" data-tanggal="2026-08-27" data-order="6" data-reveal>
+                        <button type="button" class="bookmark" aria-pressed="false" aria-label="Simpan tulisan ini"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h12v18l-6-4-6 4z"/></svg></button>
+                        <div class="post-media"><img src="images/tuhan.jpg" alt="Ilustrasi malaikat bersayap dengan wajah gelap dan lingkaran cahaya" loading="lazy" onerror="this.closest('.post-media').remove()"></div>
+                        <div class="post-body">
+                            <span class="post-tag">Agama</span>
+                            <h3><a href="articles/kita-terlalu-takut-mempertanyakan-tuhan.html">Kita Terlalu Takut Mempertanyakan &lsquo;Tuhan&rsquo;</a></h3>
+                            <p>Kita diajari jawaban sebelum diajari bertanya. Tulisan ini membahas mengapa pertanyaan sering dihentikan terlalu cepat.</p>
+                            <a class="read-more" href="articles/kita-terlalu-takut-mempertanyakan-tuhan.html">Baca selengkapnya</a>
+                            <p class="post-date">27 Agustus 2026</p>
+                        </div>
+                    </article>
+
+                </div>
+
+                <div class="empty-note" id="emptyNote" hidden>
+                    <p id="emptyText">Tidak ada tulisan yang cocok.</p>
+                    <button type="button" class="chip" id="resetFilter">Hapus filter</button>
+                </div>
+
+                <p class="more-link" data-reveal>
+                    <a href="#tulisan">Semua tulisan tersedia di halaman ini ↑</a>
+                </p>
+            </div>
+        </section>
+
+        <!-- ============ SERIES ============ -->
+        <section id="series">
+            <div class="wrap">
+                <div class="section-head" data-reveal><h2>Series</h2><a class="section-local-link" href="pages/series.html">Buka halaman Series lengkap →</a></div>
+                <p class="section-note" data-reveal>
+                    <strong>Tidak semua pemikiran selesai dalam satu tulisan.</strong>
+                    Series adalah kumpulan gagasan yang berkembang dari satu episode ke episode berikutnya tentang manusia, kehidupan, keresahan, dan hal-hal yang sering kali terlalu dekat untuk kita pertanyakan.
+                </p>
+
+                <div class="series-list" data-reveal>
+
+                    <article class="series-group">
+                        <div class="series-info">
+                            <h3>The Human Condition</h3>
+                            <p>Kita hidup, memilih, mengejar, dan kehilangan sering kali tanpa pernah bertanya mengapa. Sebuah rangkaian tulisan tentang manusia dan kontradiksi yang menyertainya.</p>
+                            <span class="series-count">6 episode</span>
+
+                            <!-- Penanda progres baca (muncul lewat script.js, disimpan di browser pembaca) -->
+                            <div class="series-progress" id="seriesProgress" hidden>
+                                <div class="bar"><span id="seriesBar"></span></div>
+                                <p id="seriesText">0 dari 6 episode dibaca</p>
+                                <div class="series-actions">
+                                    <a id="seriesNext" class="button button-sm" href="articles/episode-01-the-life-we-didnt-choose.html">Mulai dari Episode 1</a>
+                                    <button type="button" class="link-btn" id="seriesReset">Reset</button>
+                                </div>
+                            </div>
+                        </div>
+                        <ol class="series-parts">
+                            <li><a href="articles/episode-01-the-life-we-didnt-choose.html"><span class="part-title">The Life We Didn’t Choose</span><span class="part-date">2 Okt 2026</span></a></li>
+                            <li><a href="articles/episode-02-the-need-to-be-seen.html"><span class="part-title">The Need to Be Seen</span><span class="part-date">2 Okt 2026</span></a></li>
+                            <li><a href="articles/episode-03-the-pursuit-of-more.html"><span class="part-title">The Pursuit of More</span><span class="part-date">2 Okt 2026</span></a></li>
+                            <li><a href="articles/episode-04-the-illusion-of-freedom.html"><span class="part-title">The Illusion of Freedom</span><span class="part-date">2 Okt 2026</span></a></li>
+                            <li><a href="articles/episode-5-the-weight-of-existence.html"><span class="part-title">The Weight of Existence</span><span class="part-date">2 Okt 2026</span></a></li>
+                            <li><a href="articles/episode-6-and-yet-we-live-last-episode.html"><span class="part-title">And Yet, We Live <span class="part-badge">Episode terakhir</span></span><span class="part-date">2 Okt 2026</span></a></li>
+                        </ol>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ FRAGMENTS ============ -->
+        <section id="fragments" class="dark">
+            <div class="wrap">
+                <div class="section-head" data-reveal><h2>Fragments</h2><a class="section-local-link" href="pages/fragments.html">Buka halaman Fragments lengkap →</a></div>
+                <p class="section-note" data-reveal>
+                    Tidak semua pikiran butuh satu tulisan utuh. Beberapa cukup satu kalimat: tajam, tidak nyaman, dan sengaja dibiarkan terbuka. Bacalah pelan-pelan, satu per satu. Tidak harus setuju, cukup jujur pada reaksimu sendiri.
+                </p>
+
+                <div class="frag-tools" data-reveal>
+                    <button type="button" class="button button-light js-random-fragment">Fragment acak</button>
+                    <button type="button" class="button button-ghost" id="fragToggleAll">Buka semua</button>
+                </div>
+
+                <div class="fragment-list">
+
+                    <figure class="fragment" data-reveal>
+                        <span class="fragment-no">01</span>
+                        <blockquote>Kamu tidak mencari kebenaran; kamu mencari sesuatu yang membuatmu merasa benar.</blockquote>
+                        <button type="button" class="frag-toggle" aria-expanded="false" aria-controls="frag-1">Baca renungannya</button>
+                        <p class="frag-body" id="frag-1">Kita sering mengira sedang menimbang bukti, padahal diam-diam sedang mencari pembenaran. Jawaban yang menenangkan lebih mudah dipercaya daripada jawaban yang benar tapi mengusik.</p>
+                    </figure>
+
+                    <figure class="fragment" data-reveal>
+                        <span class="fragment-no">02</span>
+                        <blockquote>Dunia tidak pernah gagal memenuhi ekspektasimu. Ekspektasimulah yang tidak pernah realistis terhadap dunia.</blockquote>
+                        <button type="button" class="frag-toggle" aria-expanded="false" aria-controls="frag-2">Baca renungannya</button>
+                        <p class="frag-body" id="frag-2">Kecewa terasa seperti kesalahan dunia, padahal sering kali ia lahir dari janji yang kita buat sendiri. Mungkin yang perlu diperiksa bukan dunianya, tapi ukuran yang kita bawa.</p>
+                    </figure>
+
+                    <figure class="fragment" data-reveal>
+                        <span class="fragment-no">03</span>
+                        <blockquote>Kamu bilang kamu “jadi diri sendiri”, tapi setiap pilihanmu disaring oleh satu pertanyaan: “orang bakal suka nggak?”</blockquote>
+                        <button type="button" class="frag-toggle" aria-expanded="false" aria-controls="frag-3">Baca renungannya</button>
+                        <p class="frag-body" id="frag-3">Menjadi diri sendiri terdengar bebas, sampai kita sadar siapa yang diam-diam duduk sebagai juri. Seberapa banyak dari “dirimu” yang sebenarnya hasil sensor oleh penonton?</p>
+                    </figure>
+
+                    <figure class="fragment" data-reveal>
+                        <span class="fragment-no">04</span>
+                        <blockquote>Cinta terasa dalam bukan karena ia istimewa, tapi karena kamu ingin ia istimewa.</blockquote>
+                        <button type="button" class="frag-toggle" aria-expanded="false" aria-controls="frag-4">Baca renungannya</button>
+                        <p class="frag-body" id="frag-4">Kedalaman perasaan tidak selalu membuktikan bahwa objeknya luar biasa. Sering kali yang kita cintai adalah besarnya harapan yang kita taruh di sana.</p>
+                    </figure>
+
+                    <figure class="fragment" data-reveal>
+                        <span class="fragment-no">05</span>
+                        <blockquote>Moralitasmu tidak diuji saat dilihat orang, tapi saat kamu yakin tidak akan ketahuan.</blockquote>
+                        <button type="button" class="frag-toggle" aria-expanded="false" aria-controls="frag-5">Baca renungannya</button>
+                        <p class="frag-body" id="frag-5">Berbuat baik di depan orang itu mudah; yang jujur adalah apa yang kita lakukan ketika tidak ada saksi. Gema dari cincin Gyges milik Plato: seberapa moralkah kita tanpa penonton?</p>
+                    </figure>
+
+                    <figure class="fragment" data-reveal>
+                        <span class="fragment-no">06</span>
+                        <blockquote>Kamu tidak takut salah; kamu takut terlihat salah.</blockquote>
+                        <button type="button" class="frag-toggle" aria-expanded="false" aria-controls="frag-6">Baca renungannya</button>
+                        <p class="frag-body" id="frag-6">Kesalahan yang tidak diketahui siapa pun jarang menyakitkan. Yang membuat kita diam adalah bayangan penilaian orang lain, bukan kesalahannya sendiri.</p>
+                    </figure>
+
+                    <figure class="fragment" data-reveal>
+                        <span class="fragment-no">07</span>
+                        <blockquote>Makna tidak hilang dari hidupmu; kamu hanya berhenti menciptakannya.</blockquote>
+                        <button type="button" class="frag-toggle" aria-expanded="false" aria-controls="frag-7">Baca renungannya</button>
+                        <p class="frag-body" id="frag-7">Kita menunggu makna datang seperti paket, padahal ia lebih mirip sesuatu yang dibuat. Ketika hidup terasa hampa, mungkin pertanyaannya bukan “di mana maknanya?” tapi “kapan terakhir aku membuatnya?”</p>
+                    </figure>
+
+                    <figure class="fragment" data-reveal>
+                        <span class="fragment-no">08</span>
+                        <blockquote>Yang kamu sebut “ideal” sering kali hanya cara halus untuk menolak realitas.</blockquote>
+                        <button type="button" class="frag-toggle" aria-expanded="false" aria-controls="frag-8">Baca renungannya</button>
+                        <p class="frag-body" id="frag-8">Idealisme bisa jadi keberanian, tapi juga bisa jadi tempat sembunyi yang terhormat. Menolak dunia sambil merasa mulia itu nyaman, dan karena nyaman, patut dicurigai.</p>
+                    </figure>
+
+                    <figure class="fragment" data-reveal>
+                        <span class="fragment-no">09</span>
+                        <blockquote>Kalau tidak ada yang melihat, apakah kamu masih akan jadi versi dirimu yang sekarang?</blockquote>
+                        <button type="button" class="frag-toggle" aria-expanded="false" aria-controls="frag-9">Baca renungannya</button>
+                        <p class="frag-body" id="frag-9">Tanpa penonton, mana yang tersisa dari caramu bicara, bekerja, dan bercita-cita? Jawabannya mungkin tidak nyaman, tapi di situlah kamu paling jujur.</p>
+                    </figure>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ ABOUT ============ -->
+        <section id="about">
+            <div class="wrap">
+                <div class="section-head" data-reveal><h2>Tentang Saya</h2><a class="section-local-link" href="pages/home.html">Buka halaman Tentang Saya lengkap →</a></div>
+
+                <div class="about-grid">
+                    <div class="about-left" data-reveal>
+                        <p class="about-lead">Bertanya bukan tanda bahwa seseorang sudah menemukan kebenaran. Itu tanda bahwa ia tak ingin menerima jawaban hanya karena sejak awal ia diajarkan untuk menerimanya.</p>
+                        <img src="images/profil.jpg" alt="Foto Faza Muntaza" class="about-photo" loading="lazy" onerror="this.remove()">
+                    </div>
+
+                    <div class="about-text" data-reveal>
+                        <p>Aku <strong>Faza Muntaza</strong>, mahasiswa yang berasal dari Gayo, Aceh. Aku tumbuh di lingkungan dengan budaya Islam yang kuat dan cukup konservatif. Kedekatan dengan keyakinan itu membuatku mulai bertanya: mengapa sebagian hal harus diterima sebagai kebenaran, dan mengapa pertanyaan tertentu terasa seperti ancaman?</p>
+                        <p>Semakin dewasa dan semakin banyak belajar tentang dunia, semakin banyak pula pertanyaan yang muncul. Pengetahuan membuatku sadar betapa luasnya hal yang belum kuketahui dan membuatku memeriksa kembali jawaban-jawaban yang dulu terasa pasti. Apa yang belum kulihat? Mengapa orang lain memahami hal ini secara berbeda? Bagaimana kita tahu bahwa sesuatu yang kita yakini memang benar?</p>
+                        <p>Sains menjadi salah satu pintu yang membawaku ke pertanyaan-pertanyaan itu. Awalnya, aku tertarik pada penjelasannya tentang alam semesta. Semakin banyak yang kupelajari, semakin jauh pertanyaanku bergerak: <em>apakah hidup membutuhkan Tuhan? Apakah ada intervensi ilahi dalam dunia yang berjalan melalui hukum-hukum alam?</em> Pertanyaan itu terasa janggal sekaligus sulit kuhindari.</p>
+                        <p>Pencarian tersebut membawaku berbenturan dengan keyakinan yang telah lama hadir di sekitarku. Aku mulai melihat agama bukan hanya sebagai urusan iman pribadi, tetapi juga sebagai sistem yang dapat membentuk batas: apa yang boleh dipertanyakan, jawaban mana yang diterima, dan siapa yang dianggap menyimpang ketika bertanya terlalu jauh. Pandangan itu mengubah caraku memahami dunia. Beberapa pilihan yang kuambil mungkin terasa aneh atau terlalu ekstrem bagi orang lain.</p>
+                        <p>Namun, aku tidak menganggap diriku sudah menemukan kebenaran terakhir. Merasa “telah sadar” pun perlu diperiksa: perasaan itu bisa membuka mata, tetapi bisa juga membuat seseorang merasa lebih unggul dan berhenti mendengarkan. Karena itu, aku ingin terus bertanya—termasuk kepada keyakinanku sendiri dan kesimpulan yang terasa paling meyakinkan.</p>
+                        <p>Di <strong>Zaetroz Thinks</strong>, aku menulis tentang agama, sains, ambisi, kesuksesan, dan sistem yang membentuk cara kita berpikir. Aku menulis bukan sebagai ahli yang memiliki semua jawaban, dan bukan untuk menentukan apa yang harus dipercaya orang lain. Aku ingin menelusuri bagaimana keyakinan terbentuk, mengapa ia terasa mutlak, dan apa yang terjadi ketika kita mulai mempertanyakannya.</p>
+
+                        <ul class="chips">
+                            <li>Agama</li>
+                            <li>Sains</li>
+                            <li>Ambisi</li>
+                            <li>Kesuksesan</li>
+                            <li>Cara kita berpikir</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ CONTACT ============ -->
+        <section id="contact">
+            <div class="wrap">
+                <div class="section-head" data-reveal><h2>Kontak</h2><a class="section-local-link" href="pages/contact.html">Buka halaman Kontak lengkap →</a></div>
+
+                <div class="contact-grid">
+                    <div data-reveal>
+                        <p class="contact-lead">Untuk percakapan yang jujur, bukan sekadar validasi.</p>
+                        <p class="contact-text">Aku terbuka pada percakapan tentang tulisan, filsafat, sains, atau gagasan yang layak dipertanyakan. Kita tidak harus sepakat. Justru perbedaan bisa membuat sebuah percakapan lebih berarti, selama kita sama-sama bersedia menguji pikiran sendiri.</p>
+                        <p class="contact-text">Jangan hubungi hanya untuk mencari pembenaran. Hubungi kalau kamu siap jujur termasuk pada kemungkinan bahwa kita berdua bisa keliru.</p>
+
+                        <ul class="social-links">
+                            <li><a href="https://wa.me/6283114558334">WhatsApp</a></li>
+                            <li><a href="https://www.instagram.com/fazamzz/">Instagram</a></li>
+                            <li><a href="https://www.linkedin.com/in/faza-muntaza">LinkedIn</a></li>
+                            <li><a href="mailto:trkenzo9@gmail.com">Email</a></li>
+                        </ul>
+                    </div>
+
+                    <form id="contactForm" novalidate data-reveal>
+                        <h3>Mulai diskusi kontradiksi</h3>
+                        <p class="form-intro">Kirim pertanyaan, sanggahan, atau pikiran yang belum selesai. Tak perlu terdengar pintar. Cukup sungguh-sungguh.</p>
+
+                        <div class="form-group">
+                            <label for="name">Nama</label>
+                            <input type="text" id="name" name="name" placeholder="Masukkan nama Anda" autocomplete="name" required>
+                            <span class="error" id="nameError"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email (opsional)</label>
+                            <input type="email" id="email" name="email" placeholder="Masukkan email Anda" autocomplete="email">
+                            <span class="error" id="emailError"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Pesan</label>
+                            <textarea id="message" name="message" rows="5" maxlength="600" placeholder="Tulis pesan Anda" required></textarea>
+                            <span class="counter" id="counter">0 / 600</span>
+                            <span class="error" id="messageError"></span>
+                        </div>
+
+                        <button type="submit">Kirim pesan</button>
+                        <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ============ FOOTER ============ -->
+    <footer>
+        <div class="footer-inner">
+            <p class="footer-brand">Zaetroz Thinks:</p>
+            <p>&copy; <span id="year">2026</span> Faza Muntaza. Zaetroz Thinks:. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <button type="button" class="to-top" id="toTop" aria-label="Kembali ke atas">&uarr;</button>
+
+    <script src="script.js"></script>
+</body>
+</html>
